@@ -13,29 +13,39 @@ namespace Routing.Controllers
             _logger = logger;
         }
 
+        [Route("")]
+        [Route("Anasayfa")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Route("Hakkinda")]
         public ActionResult About()
         {
             return View();
         }
 
-        public IActionResult Haber()
+        [Route("Haberler")]
+        public IActionResult Haber(string id)
         {
+            ViewBag.Id = id;
             return View();
         }
+
+        [Route("SporGundemi")]
         public IActionResult Spor()
         {
             return View();
         }
+
+        [Route("HavaDurumu")]
         public IActionResult Hava()
         {
             return View();
         }
 
+        [Route("Gizlilik")]
         public IActionResult Privacy()
         {
             return View();
